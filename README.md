@@ -11,6 +11,8 @@ Abaixo, temos a lista dos principais elementos visto em sala de aula:
 - Listas:
     - OL: Lista ordenada
     - UL: lista nao ordenada
-
+- Imagens: `<img>`
+- links: `<a></a>`
+- Forms: `<form></form>`
 
 
