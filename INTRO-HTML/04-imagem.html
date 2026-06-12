@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imagens</title>
+</head>
+<body>
+
+    <h1>Conhecendo o elemento de Imagens</h1>
+    <hr>
+
+    <h2>Sobre as imagens</h2>
+
+    <p>
+        Trabalhar com imagens no <abbr title="HyperText Markup Language">HTML</abbr> envolve muito mais doque apenas colocar uma imagem na página. </p>
+        <p>Existem várias formas, técnicas e recusos para exibir, organizar, otimizar e adaptar as imagnes para diferentes dispositivos. </p>
+    <hr>
+
+    <h3>Formatos mais comuns de imagens</h3>
+
+    <ul>
+        <li><strong>JPEG/JPG</strong>: Fotos e imagens compactadas</li>
+        <li><strong>PNG</strong>: Imagens com transparência</li>
+        <li><strong>WEBP</strong>: Formato moderno de imagem com compressão eficiente</li>
+        <li><strong>GIF</strong>: Animações e imagens simples</li>
+        <li><strong>SVG</strong>: Gráficos vetoriais escaláveis</li>
+        <li><strong>Avif</strong>: Formato moderno de imagem com compressão eficiente com tamanho pequeno </li>
+        
+    </ul>
+
+    <h2>Sobre o elemento img </h2>
+
+    <p>A forma mais comum de inserir imagens no html é utilizando a tag <code>img</code> </p>
+        <p>trabalhando com links externos</p><!--links externos = links ou urls de sites-->
+        <code><img src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+            alt=""
+            width="300" 
+            height="200"
+            ><code>
+
+                <p>
+                o atributo src contem uma URL que aponta para a imagem que você deseja exibir. 
+                O atributo alt é usado para fornecer um texto alternativo que descreve a imagem, 
+                caso ela não possa ser exibida por algum motivo (por exemplo, se a imagem não for encontrada ou se o usuário estiver usando um leitor de tela).</p>
+
+    <p>SRC = Atributo responsável por especificar o caminho da imagem, ou seja, define onde a imagem está localizada.</p>
+    <hr>
+
+    <h4>Trabalhando com recursos locais</h4>
+
+    <p>Para usar uma imagem local, ou seja, uma imagem que está salva no seu computador, você precisa fornecer o caminho correto para a imagem no atributo src. </p>
+    <img src="../assets/computador-codigo.jpg" alt="Computador com código aberto na tela"
+    width="300" 
+    height="200"
+    >
+
+    <hr>
+
+    <p>ALT(alternative/alternativo) - É o texto alternativo que será apresentado caso a imagem não carregue</p>
+    <p>O atributo alt é <strong>Muito importante</strong>:</p>
+    <ul>
+        <li>acessibilidade</li>
+        <li>Melhora a acessibilidade para pessoas com deficiência visual</li>
+        <li>Leitores de tela</li>
+        <li>Fornece contexto para mecanismos de busca</li>
+        <li>SEO</li><!--SEO = Search Engine Optimization, ou seja, é um conjunto de técnicas e estratégias para melhorar a visibilidade e o 
+        posicionamento de um site nos resultados dos motores de busca-->
+        <li>Ajuda a identificar o conteúdo da imagem quando ela não pode ser carregada</li>
+        <li>Fallback</li> <!--Fallback = é um recurso de reserva, ou seja, é uma alternativa que será usada caso a imagem não possa ser exibida-->
+    </ul>
+
+    <hr>
+
+    <h4>Ajustando o tamanho das imagens </h4>
+
+    <img src="../assets/computador-codigo.jpg" alt="Computador com código aberto na tela" 
+    width="300" 
+    height="200"> <!--Os pixels (PX) sao uma unidade de medida usada para definir os tamanhos das imagens e Espaçamentos na interface -->
+
+    <p>HEIGHT = O atributo serve para definir a altura da imagem </p>
+    <p>WIDTH = O atributo serve para definir a largura da imagem </p>
+
+    <hr>
+
+    <h2>Trabalhando com imagens responsivas</h2>
+
+    <p>O <code>picture</code> é um elemento do HTML usado para imagens <em>responsivas e adaptativas.</em></p>
+
+    <p>Essa tag, permite o seguinte:</p>
+    <ul>
+        <li>Trocar a imagem com base no <em>tamanho</em> da tela</li>
+        <li>Melhorar a performance</li>
+        <li>Carregar imagens diferentes para mobile, tablet e desktop</li>
+    </ul>
+
+    <picture>
+        <source srcset="../assets/primavera-imagem-mobile.jpg" media="(max-width: 600px)" type="image/jpg">
+        <source srcset="../assets/primavera-imagem-tablet.jpg" media="(max-width: 768px)" type="image/jpg">
+       
+        <!-- Img como falback - o fallback é basicamente um segundo plano B, ou seja, algo que entra em ação caso as outras imagens não possam ser carregadas -->
+        <img src="../assets/primavera-imagem-desktop.jpg" alt="Imagem de primavera com flores e árvores" height="1024" width="1024">
+    </picture>
+
+    <p>srcset - Serve para oferecer múltiplas versões de uma imagem para diferentes tamanhos de tela e deixa o navegador escolher a melhor conforme o 
+        tamanho da tela, formato suportado, largura disponivel e performance do usuário.
+    </p>
+
+
+
+
+</body>
+</html>

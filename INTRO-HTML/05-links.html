@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trabalhando com Links</title>
+</head>
+
+<body>
+    <h1>Conhecendo o elemento de navegação</h1>
+    <hr>
+    <h2>Definição de link</h2>
+    <p>Um link é um elemento que permite navegar de uma <strong>página</strong>, <strong>documento</strong>,
+        <strong>recurso</strong> para outra.
+    </p>
+
+    <p>No html, a gente usa os links para: </p>
+    <ul>
+        <li>Abrir um site <em>externo</em></li>
+        <li>Levar o usuário para outra página do site</li>
+        <li>abrir aplicativos como e-mail e telefone</li>
+    </ul>
+    <hr>
+
+    <h2>Conhecendo elemento a</h2>
+
+    <p>O elemento usado para criar links é a tag a (anchor)</p>
+
+    <p>href = hyperText Reference é o atributo usado para especificar o destino do link, ou seja, a URL ou
+        o caminho para onde o link deve levar o usuário.
+    </p>
+
+
+    <h3>Navegacao externa</h3>
+
+    <a href="https://www.google.com">Acesse o site do google</a>
+
+    <p>Target - é o atributo que especifica onde o link será aberto. Os valores mais comuns são: </p>
+    <ul>
+        <li><strong>_self</strong> - abre o link na mesma janela (padrão)</li>
+        <li><strong>_blank</strong> - abre o link em uma nova janela ou aba</li>
+        <li><strong>_parent</strong> - abre o link na janela pai</li>
+        <li><strong>_top</strong> - abre o link na janela principal, eliminando quaisquer frames</li>
+        <li><strong>frame/iframe</strong> abre o link em um frame ou iframe do pai</li>
+    </ul>
+
+    <a href="https://www.google.com" target="_blank">Acesse o site do google em outra página</a>
+
+    <hr>
+
+    <h3>Explorando mais ideias com o elemento de link</h3>
+
+    <h3>Navegação interna</h3>
+
+    <a href="04-imagem.html">Saiba mais sobre imagens</a>
+    <p>Obs.: Sempre que a navegação apontar para um site externo, utilizamos o protocolo https.
+        Caso seja interna, utilzamos apenas o nome do arquivo ou indicamos o caminho relativo para o arquivo de destino.
+    </p>
+
+    <hr>
+
+    <h2>Explorando mais ideias com o elemento de link</h2>
+    <h3>Usando o elemento de link para download</h3>
+
+    <a href="assets/computador-codigo.jpg" download>baixe a imagem clicando aqui</a>
+
+    <p>Para criar um link de download, você pode usar o atributo download no elemento a.
+        O valor do atributo download é o nome do arquivo que será baixado quando o usuário clicar no link.</p>
+
+    <br>
+    <!-- br = break row - quebra de linha-->
+    <a href="assets/primavera-imagem-desktop.jpg" download="montanhaFlorida">baixe a imagem clicando aqui</a>
+
+    <h3>Acessando aplicativos</h3>
+
+    <p>
+        <a href="mailto:geovanahungria@exemplo.com">E-mail geovanahungria@exemplo.com</a>
+    </p>
+
+    <p>
+        <a href="tel:+5511997741800">Ligue para +55 11 99774-1800</a>
+    </p>
+
+    <p>
+        <a href="https://wa.me/5511997741800" target="_blank">Entre em contato com a Gege >>>> +55 11 99774-1800</a>
+    </p>
+
+
+    <p>A tag <code>a</code> é um elemento do tipo <strong>inline</strong></p>
+
+    <a href="https://unsplash.com">
+        <img src="assets/primavera-imagem-desktop.jpg" alt="Imagem de primavera" width="300" height="200">
+    </a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

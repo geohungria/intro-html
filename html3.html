@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML Versão 3</title>
+  <style>
+    :root {
+      --ink: #1f2937;
+      --muted: #5b6472;
+      --paper: #fffdf8;
+      --line: #ded6c7;
+      --accent: #d43f2f;
+      --accent-2: #136f63;
+      --accent-3: #2457a6;
+      --soft: #f4efe6;
+      --dark: #232323;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--ink);
+      background: var(--paper);
+      line-height: 1.6;
+    }
+
+    header {
+      min-height: 92vh;
+      display: grid;
+      align-items: center;
+      padding: 48px 7vw 72px;
+      color: #ffffff;
+      background:
+        linear-gradient(110deg, rgba(20, 26, 36, 0.92), rgba(20, 26, 36, 0.62)),
+        repeating-linear-gradient(90deg, #2d3545 0 12px, #253044 12px 24px);
+      border-bottom: 8px solid var(--accent);
+    }
+
+    .hero {
+      max-width: 1100px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
+      gap: 48px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin: 0 0 14px;
+      padding: 7px 10px;
+      color: #111827;
+      background: #ffd35a;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(3.5rem, 9vw, 7.5rem);
+      line-height: 0.92;
+      letter-spacing: 0;
+    }
+
+    .hero p {
+      max-width: 680px;
+      margin: 24px 0 0;
+      color: #f4f4f5;
+      font-size: 1.18rem;
+    }
+
+    .authors {
+      margin-top: 28px;
+      color: #d8dee9;
+      font-size: 0.95rem;
+    }
+
+    .browser-window {
+      border: 3px solid #111827;
+      background: #f7f7f7;
+      box-shadow: 14px 14px 0 rgba(255, 211, 90, 0.95);
+    }
+
+    .browser-bar {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      padding: 10px 12px;
+      background: #d8dee9;
+      border-bottom: 3px solid #111827;
+    }
+
+    .dot {
+      width: 13px;
+      height: 13px;
+      border-radius: 50%;
+      background: var(--accent);
+      border: 2px solid #111827;
+    }
+
+    .dot:nth-child(2) {
+      background: #ffd35a;
+    }
+
+    .dot:nth-child(3) {
+      background: var(--accent-2);
+    }
+
+    .browser-content {
+      padding: 24px;
+      color: #111827;
+      font-family: "Courier New", Courier, monospace;
+      font-size: 0.95rem;
+    }
+
+    .tag {
+      color: var(--accent-3);
+      font-weight: 700;
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 54px 7vw 76px;
+    }
+
+    section {
+      margin: 0 0 54px;
+    }
+
+    h2 {
+      margin: 0 0 18px;
+      color: var(--dark);
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      line-height: 1.08;
+      letter-spacing: 0;
+    }
+
+    h3 {
+      margin: 0 0 10px;
+      font-size: 1.2rem;
+      letter-spacing: 0;
+    }
+
+    .lead {
+      max-width: 760px;
+      color: var(--muted);
+      font-size: 1.08rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .card {
+      min-height: 180px;
+      padding: 22px;
+      background: #ffffff;
+      border: 2px solid var(--line);
+      border-radius: 8px;
+      box-shadow: 0 10px 30px rgba(31, 41, 55, 0.07);
+    }
+
+    .card strong,
+    .timeline-year {
+      color: var(--accent);
+    }
+
+    .timeline {
+      display: grid;
+      gap: 16px;
+    }
+
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      gap: 20px;
+      padding: 20px;
+      background: var(--soft);
+      border-left: 8px solid var(--accent-2);
+      border-radius: 8px;
+    }
+
+    .timeline-year {
+      font-size: 1.3rem;
+      font-weight: 800;
+    }
+
+    .feature-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .feature-list li {
+      padding: 18px;
+      background: #ffffff;
+      border: 2px solid var(--line);
+      border-radius: 8px;
+    }
+
+    .code-panel {
+      overflow: auto;
+      padding: 22px;
+      color: #f8fafc;
+      background: #151923;
+      border-radius: 8px;
+      border: 2px solid #000000;
+      font-family: "Courier New", Courier, monospace;
+      font-size: 0.95rem;
+    }
+
+    .comparison {
+      width: 100%;
+      border-collapse: collapse;
+      overflow: hidden;
+      background: #ffffff;
+      border: 2px solid var(--line);
+      border-radius: 8px;
+    }
+
+    .comparison th,
+    .comparison td {
+      padding: 16px;
+      text-align: left;
+      border-bottom: 2px solid var(--line);
+      vertical-align: top;
+    }
+
+    .comparison th {
+      color: #ffffff;
+      background: var(--accent-3);
+    }
+
+    .comparison tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .thanks {
+      padding: 42px;
+      color: #ffffff;
+      background: var(--dark);
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    .thanks h2 {
+      color: #ffffff;
+    }
+
+    footer {
+      padding: 24px 7vw;
+      color: #ffffff;
+      background: #111827;
+      text-align: center;
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 780px) {
+      header {
+        min-height: auto;
+        padding-top: 36px;
+      }
+
+      .hero,
+      .grid,
+      .feature-list,
+      .timeline-item {
+        grid-template-columns: 1fr;
+      }
+
+      .browser-window {
+        box-shadow: 8px 8px 0 rgba(255, 211, 90, 0.95);
+      }
+
+      .comparison {
+        display: block;
+        overflow-x: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="hero">
+      <div>
+        <p class="eyebrow">Trabalho de tecnologia web</p>
+        <h1>HTML<br>Versão 3</h1>
+        <p>
+          Uma fase importante da evolução da Web: mais organização, mais recursos visuais
+          e os primeiros passos para páginas completas e interativas.
+        </p>
+        <p class="authors">
+          Apresentação por Devid Soares, Geovana Hungria, Giovanna Lima,
+          Giovanna Martins e Johnatan Nascimento.
+        </p>
+      </div>
+
+      <div class="browser-window" aria-label="Janela ilustrativa de navegador antigo">
+        <div class="browser-bar">
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+        <div class="browser-content">
+          <p><span class="tag">&lt;html&gt;</span></p>
+          <p>&nbsp;&nbsp;<span class="tag">&lt;table&gt;</span> organização visual <span class="tag">&lt;/table&gt;</span></p>
+          <p>&nbsp;&nbsp;<span class="tag">&lt;form&gt;</span> interação com usuários <span class="tag">&lt;/form&gt;</span></p>
+          <p>&nbsp;&nbsp;<span class="tag">&lt;img&gt;</span> páginas mais atrativas</p>
+          <p><span class="tag">&lt;/html&gt;</span></p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <h2>O Que Foi o HTML 3?</h2>
+      <p class="lead">
+        O HTML 3 foi uma etapa antiga do HTML criada para melhorar a aparência e a
+        organização das páginas da Web. Ele surgiu em 1995, quando
+        os sites estavam deixando de ser apenas textos com links e começando a ganhar
+        tabelas, imagens, formulários e elementos visuais.
+      </p>
+    </section>
+
+    <section>
+      <h2>Origem</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>O que é?</h3>
+          <p>
+            Uma versão/proposta antiga do HTML pensada para criar páginas web mais
+            completas, organizadas e visualmente interessantes.
+          </p>
+        </article>
+        <article class="card">
+          <h3>Quando surgiu?</h3>
+          <p>
+            Foi desenvolvido em 1995, período em que a Web crescia rapidamente
+            e precisava de padrões melhores.
+          </p>
+        </article>
+        <article class="card">
+          <h3>Quem criou o HTML?</h3>
+          <p>
+            O HTML original foi criado por <strong>Tim Berners-Lee</strong> no início dos anos
+            1990 para estruturar documentos e conectar páginas na Web.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2>Diferença Entre HTML 2.0, 3.0 e 3.2</h2>
+      <div class="timeline">
+        <article class="timeline-item">
+          <div class="timeline-year">1995</div>
+          <div>
+            <h3>HTML 2.0</h3>
+            <p>
+              Primeiro padrão formal do HTML. Era mais simples e focado na estrutura
+              básica das páginas, links, imagens e formulários.
+            </p>
+          </div>
+        </article>
+        <article class="timeline-item">
+          <div class="timeline-year">1995</div>
+          <div>
+            <h3>HTML 3.0</h3>
+            <p>
+              Proposta mais avançada, com recursos como tabelas, fórmulas matemáticas
+              e maior controle visual. Não virou padrão oficial e acabou expirando.
+            </p>
+          </div>
+        </article>
+        <article class="timeline-item">
+          <div class="timeline-year">1997</div>
+          <div>
+            <h3>HTML 3.2</h3>
+            <p>
+              Versão oficial recomendada pelo W3C. Padronizou recursos já usados pelos
+              navegadores, como tabelas, applets, imagens e elementos de apresentação.
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2>Por Que o HTML Precisou Evoluir?</h2>
+      <table class="comparison">
+        <thead>
+          <tr>
+            <th>Problema</th>
+            <th>Como o HTML 3.x ajudou</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Caos visual</td>
+            <td>Introduziu mais formas de organizar conteúdo e aparência.</td>
+          </tr>
+          <tr>
+            <td>Layout rígido</td>
+            <td>Tabelas e alinhamentos permitiram compor páginas mais estruturadas.</td>
+          </tr>
+          <tr>
+            <td>Páginas muito simples</td>
+            <td>Imagens, formulários e tags visuais deixaram os sites mais completos.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Principais Recursos</h2>
+      <ul class="feature-list">
+        <li>
+          <h3>Tabelas</h3>
+          <p>
+            Organizam dados em linhas e colunas, facilitando listas, horários,
+            comparações e até layouts dos primeiros sites.
+          </p>
+        </li>
+        <li>
+          <h3>Formulários mais avançados</h3>
+          <p>
+            Permitiram cadastros, pesquisas, logins e envio de informações,
+            tornando a Web mais dinâmica e funcional.
+          </p>
+        </li>
+        <li>
+          <h3>Suporte a imagens</h3>
+          <p>
+            Tornou mais fácil inserir e organizar imagens nas páginas, deixando
+            os sites mais visuais, informativos e atrativos.
+          </p>
+        </li>
+        <li>
+          <h3>Apresentação visual</h3>
+          <p>
+            Tags como <code>&lt;font&gt;</code>, <code>&lt;center&gt;</code> e
+            atributos de cor deram mais controle sobre a aparência.
+          </p>
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Elementos de Apresentação Visual e Estruturação de Páginas</h2>
+      <p class="lead">
+        No HTML 3.x, começaram a surgir recursos que permitiam deixar as páginas
+        mais organizadas e visualmente atrativas. Antes, o HTML era mais focado
+        em textos simples, links e formulários.
+      </p>
+
+      <div class="grid">
+        <article class="card">
+          <h3>Elementos de apresentação visual</h3>
+          <ul>
+            <li>Uso de tags como <code>&lt;font&gt;</code>, <code>&lt;center&gt;</code> e atributos de cor.</li>
+            <li>Maior controle sobre a aparência do texto.</li>
+            <li>Possibilidade de alinhar imagens e conteúdos.</li>
+            <li>Criação de páginas com visual mais personalizado.</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3>Melhor estruturação de páginas</h3>
+          <ul>
+            <li>Uso de tabelas para organizar informações.</li>
+            <li>Separação mais clara entre títulos, textos, imagens e formulários.</li>
+            <li>Páginas mais completas e fáceis de navegar.</li>
+            <li>Base para a evolução dos layouts modernos.</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3>Impacto na criação de sites</h3>
+          <p>
+            Esses recursos ajudaram no nascimento do web design, tornando a
+            estrutura das páginas mais prática e abrindo espaço para maior
+            interatividade.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2>Exemplo de Código da Época</h2>
+      <div class="code-panel">
+<pre>&lt;html&gt;
+  &lt;body bgcolor="white"&gt;
+    &lt;center&gt;
+      &lt;font color="red" size="5"&gt;Minha página em HTML 3.x&lt;/font&gt;
+    &lt;/center&gt;
+
+    &lt;table border="1"&gt;
+      &lt;tr&gt;
+        &lt;th&gt;Recurso&lt;/th&gt;
+        &lt;th&gt;Função&lt;/th&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;Tabelas&lt;/td&gt;
+        &lt;td&gt;Organizar informações&lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/table&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</pre>
+      </div>
+    </section>
+
+    <section>
+      <h2>Importância Para a Web</h2>
+      <p class="lead">
+        O HTML 3.x marcou o nascimento de uma Web mais visual e interativa.
+        Mesmo com limitações, abriu caminho para a evolução dos layouts modernos,
+        para páginas mais completas e para a separação futura entre estrutura,
+        estilo e comportamento com HTML, CSS e JavaScript.
+      </p>
+    </section>
+
+    <section class="thanks">
+      <h2>Obrigado!</h2>
+      <p>HTML 3: uma etapa essencial na história das páginas web.</p>
+    </section>
+  </main>
+
+  <footer>
+    Conteúdo adaptado da apresentação "HTML Versão 3".
+  </footer>
+</body>
+</html>

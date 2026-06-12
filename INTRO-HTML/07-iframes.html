@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Iframes</title>
+</head>
+
+<body>
+    <h1>Sobre Iframes</h1>
+    <p>O elemento &lt;iframe&gt; (inline frames) são elementos HTML que permitem incorporar outro
+        documento HTML dentro de um documento principal.
+        Eles são úteis para exibir conteúdo de outras páginas ou sites dentro da página atual.
+    </p>
+
+    <h2>Conhecendo o Iframe do YouTube</h2>
+
+    <!-- iframe width="560" height="315" serve para definir a largura e altura do iframe, respectivamente. -->
+    <!-- title = serve para definir o título do iframe, que é exibido quando o mouse está sobre ele. 
+      Usamos para acessibilidade -->
+    <!-- frameborder = serve para definir a borda do iframe. O valor "0" indica que não haverá borda. -->
+    <!-- allow = serve para definir as permissões para o conteúdo do iframe.-->
+    <!-- referrerpolicy = serve para definir a política de referência para o conteúdo do iframe.-->
+    <!-- allowfullscreen = serve para permitir que o conteúdo do iframe seja exibido em tela cheia. -->
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/CQwDuPbKXfQ?si=QxaFj_EKloDGqASa"
+        title="Videio do canal do Alanzoka no YouTube" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+    </iframe>
+    <hr>
+
+    <h2>Adicionando um iframe do maps</h2>
+
+    <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3655.231091845745!2d-46.595587800000004!3d-23.6318937!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5b5faa751777%3A0x4c70f76f783264de!2sCondom%C3%ADnio%20Princess%20Plaza!5e0!3m2!1spt-BR!2sbr!4v1780966697697!5m2!1spt-BR!2sbr"
+        width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <hr>
+
+    <!-- style = permite definir estilos para o iframe 
+    loading = serve para definir o comportamento de carregamento do iframe. 
+    O valor "lazy" indica que o iframe deve ser carregado de forma preguiçosa, ou seja, 
+    somente quando estiver prestes a entrar na área de visualização do usuário. 
+    referrerpolicy = serve para definir a política de referência para o conteúdo do iframe. 
+    O valor "no-referrer-when-downgrade" indica que o navegador não enviará informações de referência 
+    quando a solicitação for feita para um URL que não seja seguro (HTTP) a partir de um URL seguro (HTTPS).
+    -->
+    <hr>
+
+    <h2>Exemplo com página interna</h2>
+
+    <iframe src="06-forms.html" frameborder="0" width="700" height="500"></iframe>
+    <hr>
+
+    <h2>Galeria de imagem com iframe</h2>
+
+    <iframe src="" width="500" height="300" name="meuFrame"></iframe>
+
+    <br>
+
+    <a href="../assets/computador-codigo.jpg" target="meuFrame">Imagem 1</a>
+    <a href="../assets/primavera-imagem-mobile.jpg" target="meuFrame">Imagem 2</a>
+    <a href="../assets/computador-codigo.jpg" target="meuFrame">Imagem 3</a>
+
+</body>
+
+</html>

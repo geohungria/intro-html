@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trabalhando com formlários</title>
+</head>
+
+<body>
+    <h1>Conhecendo o Formulários</h1>
+    <hr>
+
+    <h2>Form</h2>
+    <p>No HTML, a tag <code>&lt;form&gt;</code> é utilizada para criar formulários.
+    Ele serve para coletar dados do usuario e enviar para um servidor para processamento.(Aplicação web). <code>&lt;form&gt;</code> é o contêiner principal para os elementos de formulário, como campos de entrada, botões, caixas de seleção, etc. Ele define a estrutura do formulário e especifica como os dados serão enviados para o servidor.
+    </p>
+    <p>&copy;</p>
+    <!-- O atributo action define a URL para onde os dados do formulário serão enviados -->
+    <!-- O atributo method define o método HTTP usado para enviar os dados (GET ou POST) -->
+<form action="">
+    <!-- Elemento input = é utilizado para criar uma caixa onde o usuária poderá inserir os dados solicitados -->
+    <input type="text" placeholder="Ex: Ana Mariana">
+    <!-- O atributo type define o tipo de entrada do campo
+     ele é utilizados para definir o tipo de dado que será inserido -->
+     <br>
+     <label for="senha">Senha:</label> <!-- O elemento label/for é utilizado para associar um rótulo a um elemento de formulário, como um campo de entrada. Ele melhora a acessibilidade e a usabilidade do formulário, 
+     permitindo que os usuários entendam claramente o propósito de cada campo. 
+     
+     for = serve para associar o rótulo ao campo de entrada correspondente, usando o valor do atributo id do campo de entrada. -->
+     <!-- O atributo placeholder é utilizado para fornecer uma dica ou exemplo de preenchimento para um campo de entrada. Ele exibe um texto dentro do campo de entrada quando ele está vazio, indicando ao
+        usuário o tipo de informação que deve ser inserida ou como preencher o campo corretamente.
+
+    id = é um atributo que atribui um identificador único a um elemento HTML. 
+    Ele é utilizado para identificar e referenciar o elemento de forma específica, 
+    permitindo que seja manipulado por meio de CSS ou JavaScript. 
+    O valor do id deve ser único dentro do documento HTML, ou seja, não pode haver dois elementos com o mesmo id.
+     -->
+     <input type="password" id="senha" placeholder="Digite sua senha" id=" password">
+     <!--Placeholder é um texto que aparece dentro do campo de entrada, indicando ao usuário saiba como preencher ou interagir com o campo-->
+    <input type="password" placeholder="Confirme sua senha" id="confirmar-password">
+        <br>
+        <button type="submit">Enviar</button>
+        <!--O tipo submit é utilizado para criar um botão que, quando clicado, envia os dados do formulário para o servidor. 
+            O tipo reset é utilizado para criar um botão que, quando clicado, limpa todos os campos do formulário, retornando-os ao estado inicial.
+            O tipo button é utilizado para criar um botão genérico que não tem um comportamento específico associado a ele. Ele pode ser usado para acionar ações personalizadas por meio de JavaScript, como abrir um modal, exibir uma mensagem, etc.
+        -->   
+    </form>
+
+    <h2>Faça Login</h2>
+    <form>
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" placeholder="seu@email.com" id="email">
+        <br>
+        <label for="login-password">Senha:</label> <br>
+        <input type="password" id="login-password" placeholder="Digite sua senha" 
+        id="login-password">
+
+        <button type="submit">Entrar</button>
+    </form>
+
+    <hr>
+    <h2>Cadastre-se</h2>
+    <form>
+       <label for="nome">Nome Completo:</label><br>
+         <input type="text" placeholder="Ex: Denis bobão" required><br>
+
+        <label for="email">Email:</label><br>
+        <input type="email" required id="email" placeholder="seu@email.com"><br>
+
+        <label for="password">Senha(minimo 6 caracteres):</label><br>
+        <input type="password" required id="password" placeholder="Digite sua senha"><br>
+
+        <label for="confirmar-password">Confirme sua senha:</label><br>
+        <input type="password" required id="confirmar-password" placeholder="Confirme sua senha" minlength="6"><br>
+        
+        <label for="termos">Li e ceito os termos e condições</label>
+        <input type="checkbox" id="termos" required><br>
+
+        <button type="submit">Cadastrar</button>
+
+        <hr>
+
+        <h2>Testando outros recursos do formulário</h2>
+        <form> 
+            <input type="radio" id="html" name="linguagem" value="html">
+             <label for="html">HTML</label> <br>
+
+              <input type="radio" id="css" name="linguagem" value="css">
+             <label for="css">CSS</label><br>
+
+              <input type="radio" id="js" name="linguagem" value="js">
+             <label for="js">JavaScript</label><br>
+
+             <label for="mensagem">Deixe sua mensagem:</label><br>
+             <textarea id="mensagem" placeholder="Digite sua mensagem" rows="5" cols="40"></textarea><br>
+            <input type="date" id="data" name="data"><br>
+
+             <button type="submit">Enviar</button>
+
+        </form>
+    </form>
+
+
+
+
+
+
+
+
+</body>
+</html>
